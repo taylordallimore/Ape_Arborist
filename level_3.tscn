@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhw6q6gn386q4"]
+
+[ext_resource type="Script" path="res://BG.gd" id="1_hacsn"]
+[ext_resource type="Texture2D" uid="uid://bc3lfyb5jtg8h" path="res://assets/CloudBackground.jpg" id="2_o35jv"]
+
+[node name="level_3" type="Node2D"]
+
+[node name="BG" type="ParallaxBackground" parent="."]
+script = ExtResource("1_hacsn")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="BG"]
+motion_scale = Vector2(0.2, 1)
+motion_mirroring = Vector2(2635, 0)
+
+[node name="CloudBackground" type="Sprite2D" parent="BG/ParallaxLayer2"]
+position = Vector2(1977, 304)
+scale = Vector2(0.972059, 0.897786)
+texture = ExtResource("2_o35jv")
+
+[node name="CloudBackground2" type="Sprite2D" parent="BG/ParallaxLayer2"]
+position = Vector2(659, 304)
+scale = Vector2(0.972059, 0.897786)
+texture = ExtResource("2_o35jv")
+flip_h = true

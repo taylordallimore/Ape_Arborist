@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ct7afe253kgi4"]
+
+[ext_resource type="Texture2D" uid="uid://c0nbatxa5cjqv" path="res://assets/SpaceBG.jpg" id="1_o6trh"]
+
+[node name="level_4" type="Node2D"]
+
+[node name="SpaceBg" type="Sprite2D" parent="."]
+position = Vector2(665, 427)
+scale = Vector2(0.655392, 0.737847)
+texture = ExtResource("1_o6trh")
