@@ -14,5 +14,5 @@ func _on_quit_pressed():
 
 
 func _on_crawf_pressed():
-	get_tree().change_scene_to_file("res://crawford_tree_test.tscn")
+	get_tree().change_scene_to_file("res://crawfTest.tscn")
 
