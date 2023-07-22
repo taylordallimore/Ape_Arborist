@@ -273,7 +273,6 @@ scale = Vector2(0.789898, 1.04267)
 script = ExtResource("1_cdbgi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(16.4578, 1.91816)
 shape = SubResource("CapsuleShape2D_5lr7n")
 one_way_collision = true
@@ -289,6 +288,6 @@ position = Vector2(0, 0.959078)
 scale = Vector2(0.543988, 0.601535)
 sprite_frames = SubResource("SpriteFrames_q0ub0")
 animation = &"Hit"
-frame = 2
+frame = 6
 flip_h = true
 metadata/_edit_lock_ = true
