@@ -281,7 +281,7 @@ position = Vector2(0, 0.959078)
 scale = Vector2(0.543988, 0.601535)
 sprite_frames = SubResource("SpriteFrames_q0ub0")
 animation = &"Hit"
-frame = 6
+frame = 2
 flip_h = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
