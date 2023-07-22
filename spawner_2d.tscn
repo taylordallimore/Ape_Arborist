@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://iiarnn756g7j"]
+
+[ext_resource type="Script" path="res://Marker2D.gd" id="1_fr8ur"]
+[ext_resource type="PackedScene" uid="uid://cn2q8kmjstev0" path="res://lumberjack.tscn" id="2_vbsg8"]
+
+[node name="Spawner2D" type="Marker2D"]
+position = Vector2(337, 269)
+gizmo_extents = 50.0
+script = ExtResource("1_fr8ur")
+spawnling_scene = ExtResource("2_vbsg8")
