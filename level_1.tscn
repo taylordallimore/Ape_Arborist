@@ -1,7 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://be67tw26ua16f"]
-
-[ext_resource type="PackedScene" uid="uid://b5duv7akkuhok" path="res://bg.tscn" id="1_0e2x1"]
-[ext_resource type="Texture2D" uid="uid://j5vtsox467i4" path="res://assets/tileset.png" id="1_ejclg"]
+[gd_scene load_steps=3 format=3 uid="uid://cjjbvxsnpvmgy"]
 
 [sub_resource type="GDScript" id="GDScript_il7fe"]
 
