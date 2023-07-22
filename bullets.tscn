@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c2trakwsfbqbb"]
+[gd_scene load_steps=26 format=3 uid="uid://c2trakwsfbqbb"]
 
 [ext_resource type="Script" path="res://bullets.gd" id="1_eh057"]
 [ext_resource type="Texture2D" uid="uid://cw4qkspwxmyj0" path="res://Projectiles/banana.png" id="2_l5yyd"]
@@ -174,10 +174,14 @@ tracks/0/keys = {
 "values": [1]
 }
 
+[sub_resource type="Animation" id="Animation_jinyg"]
+resource_name = "poop"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o7yks"]
 _data = {
 "Fling": SubResource("Animation_iqavc"),
-"RESET": SubResource("Animation_og57n")
+"RESET": SubResource("Animation_og57n"),
+"poop": SubResource("Animation_jinyg")
 }
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_fqoot"]
@@ -216,4 +220,5 @@ visible = false
 position = Vector2(-44, -43)
 shape = SubResource("CircleShape2D_8ruly")
 
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_exited"]
