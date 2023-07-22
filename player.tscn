@@ -6,10 +6,19 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qq5nw"]
 size = Vector2(133.5, 131.5)
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" groups=["tg"]]
 position = Vector2(242, 100)
 collision_layer = 2
 script = ExtResource("1_le6rx")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 1.52588e-05)
+scale = Vector2(1.14844, 1.11223)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -1.52588e-05)
+scale = Vector2(0.870746, 0.899095)
+shape = SubResource("RectangleShape2D_qq5nw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(3.8147e-06, 1.14441e-05)
