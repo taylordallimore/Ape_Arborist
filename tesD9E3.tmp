@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cirdr05dkrn2"]
+
+[ext_resource type="PackedScene" uid="uid://coh7200vfk677" path="res://player.tscn" id="1_0e3w3"]
+[ext_resource type="PackedScene" uid="uid://bnlfvaxws22dk" path="res://turret.tscn" id="2_3dylu"]
+[ext_resource type="PackedScene" uid="uid://dmyhpcfdwptjn" path="res://wall.tscn" id="3_he77d"]
+
+[node name="Test_scene" type="Node2D"]
+
+[node name="Wall" parent="." instance=ExtResource("3_he77d")]
+position = Vector2(111, 230)
+
+[node name="Turret" parent="." instance=ExtResource("2_3dylu")]
+position = Vector2(111, 127)
+
+[node name="player" parent="." instance=ExtResource("1_0e3w3")]
+position = Vector2(519, 486)
