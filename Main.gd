@@ -11,4 +11,3 @@ func _on_test_pressed():
 
 func _on_quit_pressed():
 	get_tree().quit()
-	print("Bolo")
