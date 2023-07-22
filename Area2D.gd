@@ -16,3 +16,4 @@ func _on_body_entered(body:Node2D):
 	if body.is_in_group("t"):
 		print("kefe")
 		# body.velocity.x = 0
+		body.start_attacking()
