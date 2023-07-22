@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 1.0
+const SPEED = 100.0
 # const JUMP_VELOCITY = -400.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -11,7 +11,7 @@ var health = 100
 @onready var anim = get_node("AnimationPlayer")
 
 func _ready():
-	velocity.x -=  100 *SPEED
+	velocity.x -= SPEED
 
 
 func _physics_process(delta):
