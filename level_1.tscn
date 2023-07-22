@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://3pilys08up65"]
+[gd_scene load_steps=8 format=3 uid="uid://3pilys08up65"]
 
 [ext_resource type="PackedScene" uid="uid://cjpfmcgy0cy8r" path="res://bg.tscn" id="1_0e2x1"]
 [ext_resource type="Texture2D" uid="uid://j5vtsox467i4" path="res://assets/tileset.png" id="1_ejclg"]
 [ext_resource type="PackedScene" uid="uid://cn2q8kmjstev0" path="res://lumberjack.tscn" id="3_qyo7w"]
+[ext_resource type="PackedScene" uid="uid://bnlfvaxws22dk" path="res://turret.tscn" id="4_3wh66"]
 
 [sub_resource type="GDScript" id="GDScript_il7fe"]
 
@@ -429,3 +430,6 @@ layer_0/tile_data = PackedInt32Array(2621449, 65536, 1, 2621450, 65536, 1, 26214
 position = Vector2(817, 485)
 floor_max_angle = 1.77325
 floor_snap_length = 5.9
+
+[node name="Turret" parent="." instance=ExtResource("4_3wh66")]
+position = Vector2(151, 292)
