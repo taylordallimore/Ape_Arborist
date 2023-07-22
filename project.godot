@@ -15,7 +15,6 @@ run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
-[layer_names]
+[rendering]
 
-2d_physics/layer_1="Objects"
-2d_physics/layer_2="Players"
+textures/canvas_textures/default_texture_filter=0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://bhw6q6gn386q4"]
+[gd_scene load_steps=3 format=3 uid="uid://dmyn6oko3n1rm"]
 
 [ext_resource type="Script" path="res://BG.gd" id="1_hacsn"]
 [ext_resource type="Texture2D" uid="uid://bc3lfyb5jtg8h" path="res://assets/CloudBackground.jpg" id="2_o35jv"]
