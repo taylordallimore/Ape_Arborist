@@ -6,6 +6,7 @@ extends Node2D
 
 var can_fire = true
 var player
+var poop = false
 
 func _ready():
 	player = get_parent().find_child("player")
@@ -19,6 +20,15 @@ func _physics_process(_delta):
 		if can_fire:
 			animation.play("Throw")
 			_shoot()
+
+func _input(event):
+	_aim() #aim at player
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			if can_fire:
+				animation.play("Throw")
+				_shoot()
+
 			
 		
 # func _input(event):

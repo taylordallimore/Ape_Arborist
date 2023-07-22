@@ -9,24 +9,30 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var health = 100
 
 @onready var anim = get_node("AnimationPlayer")
-
+var alive = true
 func _ready():
 	velocity.x -= SPEED
+
+func kill():
+	alive = false
+	anim.play("Dead")
+	
 
 
 func _physics_process(delta):
 	# Add the gravity.
-
-	print(velocity.x)
+	if not alive:
+		return
+	# print(velocity.x) 
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
-	if health <= 0:
-		anim.play("Death")
-		velocity.x = 0
-		velocity.y = 0
-		rotation_degrees = 90
-		return
+	# if health <= 0:
+	# 	anim.play("Death")
+	# 	velocity.x = 0
+	# 	velocity.y = 0
+	# 	rotation_degrees = 90
+	# 	return
 
 
 	if velocity.x == 0:

@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://b24sd3p0x1h21"]
+[gd_scene load_steps=9 format=3 uid="uid://b24sd3p0x1h21"]
 
 [ext_resource type="Texture2D" uid="uid://j5vtsox467i4" path="res://assets/tileset.png" id="1_b68dc"]
 [ext_resource type="Script" path="res://crawfTest.gd" id="1_sgbtl"]
 [ext_resource type="PackedScene" uid="uid://cjpfmcgy0cy8r" path="res://bg.tscn" id="2_xfqip"]
 [ext_resource type="PackedScene" uid="uid://cm1jobxyic5cf" path="res://tree_1.tscn" id="4_somtx"]
 [ext_resource type="PackedScene" uid="uid://cn2q8kmjstev0" path="res://lumberjack.tscn" id="5_yrnla"]
+[ext_resource type="PackedScene" uid="uid://bnlfvaxws22dk" path="res://turret.tscn" id="6_7iet0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vc6k3"]
 texture = ExtResource("1_b68dc")
@@ -426,7 +427,10 @@ layer_0/tile_data = PackedInt32Array(2621449, 65536, 1, 2621450, 65536, 1, 26214
 [node name="BG" parent="." instance=ExtResource("2_xfqip")]
 
 [node name="Tree" parent="." instance=ExtResource("4_somtx")]
-position = Vector2(405, 316)
+position = Vector2(149, 266)
 
 [node name="Lumberjack" parent="." instance=ExtResource("5_yrnla")]
 position = Vector2(926, 549)
+
+[node name="Turret" parent="." instance=ExtResource("6_7iet0")]
+position = Vector2(313, 253)
