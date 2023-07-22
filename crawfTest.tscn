@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://crawfTest.gd" id="1_sgbtl"]
 [ext_resource type="PackedScene" uid="uid://cjpfmcgy0cy8r" path="res://bg.tscn" id="2_xfqip"]
 [ext_resource type="PackedScene" uid="uid://xw7mc6ir0yhe" path="res://tchar.tscn" id="4_f5kw6"]
-[ext_resource type="PackedScene" uid="uid://bex147wwvtp88" path="res://tree_1.tscn" id="6_wanxv"]
+[ext_resource type="PackedScene" uid="uid://cm1jobxyic5cf" path="res://tree_1.tscn" id="6_wanxv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vc6k3"]
 texture = ExtResource("1_b68dc")
@@ -428,5 +428,5 @@ layer_0/tile_data = PackedInt32Array(2621449, 65536, 1, 2621450, 65536, 1, 26214
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_f5kw6")]
 position = Vector2(962, 497)
 
-[node name="Tree 1" parent="." instance=ExtResource("6_wanxv")]
-position = Vector2(410, 22)
+[node name="StaticBody2D" parent="." instance=ExtResource("6_wanxv")]
+position = Vector2(587, 343)
