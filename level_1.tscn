@@ -1,10 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://be67tw26ua16f"]
+[gd_scene load_steps=7 format=3 uid="uid://be67tw26ua16f"]
 
 [ext_resource type="PackedScene" uid="uid://b5duv7akkuhok" path="res://bg.tscn" id="1_0e2x1"]
-[ext_resource type="Script" path="res://level_1.gd" id="1_46e6q"]
 [ext_resource type="Texture2D" uid="uid://j5vtsox467i4" path="res://assets/tileset.png" id="1_ejclg"]
 [ext_resource type="PackedScene" uid="uid://cn2q8kmjstev0" path="res://lumberjack.tscn" id="3_qyo7w"]
-[ext_resource type="PackedScene" uid="uid://iiarnn756g7j" path="res://spawner_2d.tscn" id="4_sj4hu"]
+
+[sub_resource type="GDScript" id="GDScript_il7fe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vc6k3"]
 texture = ExtResource("1_ejclg")
@@ -429,9 +429,3 @@ layer_0/tile_data = PackedInt32Array(2621449, 65536, 1, 2621450, 65536, 1, 26214
 position = Vector2(817, 485)
 floor_max_angle = 1.77325
 floor_snap_length = 5.9
-
-[node name="Spawner2D" parent="." instance=ExtResource("4_sj4hu")]
-position = Vector2(2258, 547)
-
-[connection signal="ready" from="." to="." method="_on_ready"]
-[connection signal="ready" from="Spawner2D" to="." method="_on_spawner_2d_ready"]

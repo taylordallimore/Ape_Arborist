@@ -1,18 +1,219 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2trakwsfbqbb"]
+[gd_scene load_steps=25 format=3 uid="uid://c2trakwsfbqbb"]
 
 [ext_resource type="Script" path="res://bullets.gd" id="1_eh057"]
-[ext_resource type="Texture2D" uid="uid://cs1fwn7swgoj8" path="res://icon.svg" id="2_2otc4"]
+[ext_resource type="Texture2D" uid="uid://cw4qkspwxmyj0" path="res://Projectiles/banana.png" id="2_l5yyd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hls28"]
+atlas = ExtResource("2_l5yyd")
+region = Rect2(0, 0, 266, 277)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwjqt"]
+atlas = ExtResource("2_l5yyd")
+region = Rect2(266, 0, 266, 277)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8oyb"]
+atlas = ExtResource("2_l5yyd")
+region = Rect2(532, 0, 266, 277)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cp4s4"]
+atlas = ExtResource("2_l5yyd")
+region = Rect2(0, 277, 266, 277)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urp1v"]
+atlas = ExtResource("2_l5yyd")
+region = Rect2(266, 277, 266, 277)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxwc6"]
+atlas = ExtResource("2_l5yyd")
+region = Rect2(532, 277, 266, 277)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1ba4"]
+atlas = ExtResource("2_l5yyd")
+region = Rect2(0, 554, 266, 277)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t37gp"]
+atlas = ExtResource("2_l5yyd")
+region = Rect2(266, 554, 266, 277)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0h8h"]
+atlas = ExtResource("2_l5yyd")
+region = Rect2(532, 554, 266, 277)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hv4f8"]
+atlas = ExtResource("2_l5yyd")
+region = Rect2(0, 831, 266, 277)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qn7ek"]
+atlas = ExtResource("2_l5yyd")
+region = Rect2(266, 831, 266, 277)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrqrl"]
+atlas = ExtResource("2_l5yyd")
+region = Rect2(532, 831, 266, 277)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rxd3"]
+atlas = ExtResource("2_l5yyd")
+region = Rect2(0, 1108, 266, 277)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_baeyy"]
+atlas = ExtResource("2_l5yyd")
+region = Rect2(266, 1108, 266, 277)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2o2dx"]
+atlas = ExtResource("2_l5yyd")
+region = Rect2(532, 1108, 266, 277)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bpo6j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hls28")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwjqt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8oyb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cp4s4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_urp1v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxwc6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i1ba4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t37gp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y0h8h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hv4f8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qn7ek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qrqrl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3rxd3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_baeyy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2o2dx")
+}],
+"loop": true,
+"name": &"Fling",
+"speed": 5.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_dnsb1"]
+script/source = "extends AnimatedSprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="Animation" id="Animation_iqavc"]
+resource_name = "Fling"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Fling"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+}
+
+[sub_resource type="Animation" id="Animation_og57n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o7yks"]
+_data = {
+"Fling": SubResource("Animation_iqavc"),
+"RESET": SubResource("Animation_og57n")
+}
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_fqoot"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8ruly"]
+radius = 18.0
 
 [node name="bullets" type="Area2D"]
 script = ExtResource("1_eh057")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-45, -43)
+scale = Vector2(0.130404, 0.130404)
+sprite_frames = SubResource("SpriteFrames_bpo6j")
+animation = &"Fling"
+frame = 1
+script = SubResource("GDScript_dnsb1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_o7yks")
+}
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-44, -44)
-scale = Vector2(0.3125, 0.3125)
-texture = ExtResource("2_2otc4")
+position = Vector2(-64, -61)
+scale = Vector2(39, 36)
+texture = SubResource("ViewportTexture_fqoot")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+visible = false
 position = Vector2(-44.5, -43.25)
 scale = Vector2(1.95, 1.825)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-44, -43)
+shape = SubResource("CircleShape2D_8ruly")
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_exited"]
