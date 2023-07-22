@@ -1,5 +1,6 @@
-extends Area2D
-
+extends StaticBody2D
+var health = 10000
+var alive = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -10,8 +11,12 @@ func _ready():
 func _process(delta):
 	pass
 
+func damage():
+	health -= 10
+	print("ouch")
+	print(health)
+	if health <= 0:
+		print("dead")
+		alive = false
+		
 
-func _on_body_entered(body:Node2D):
-	# pass # Replace with function body.
-	if body.is_in_group("t"):
-		body.start_attacking()

@@ -11,28 +11,47 @@ var health = 100
 # State of the lumberjack.
 var alive = true
 var attacking = false
+var target = null
 
 @onready var anim = get_node("AnimationPlayer")
 
 func _ready():
-	velocity.x -= SPEED
+	velocity.x = -SPEED
 
 func kill():
 	alive = false
 	anim.play("Dead")
 
-func start_attack():
+func start_attacking(tree:Node2D):
+	target = tree
 	attacking = true
-	anim.play("Attack")
+	anim.play("Hit")
+	velocity.x = 0
+	target.damage()
 	
 
 func _physics_process(delta):
 	# Add the gravity.
-	if not alive or attacking:
+	if not alive:
+		return
+	if attacking:
+		target.damage()
 		return
 	# print(velocity.x) 
+	velocity.x = -SPEED
+
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		anim.play("Walk")
 
 	move_and_slide()
+
+
+
+# func _on_lumber_body_body_entered(body:Node2D):
+# 	if body.is_in_group("tree"):
+# 		print("bolo")
+		
+# 		if alive:
+# 			start_attacking()
+# 			body.damage()

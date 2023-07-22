@@ -11,7 +11,11 @@ func _process(delta):
 	pass
 
 
+
+
 func _on_body_entered(body:Node2D):
-	# pass # Replace with function body.
-	if body.is_in_group("t"):
-		body.start_attacking()
+		if body.is_in_group("tree"):
+			var parent = get_parent()
+			if parent.alive:
+				parent.start_attacking(body)
+				
