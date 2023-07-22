@@ -9,7 +9,7 @@ script = ExtResource("1_fr8ur")
 spawnling_scene = ExtResource("2_vbsg8")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 7.0
 autostart = true
 
 [connection signal="spawned" from="." to="." method="_on_spawned"]

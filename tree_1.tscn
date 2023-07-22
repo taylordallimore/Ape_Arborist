@@ -4,13 +4,13 @@
 [ext_resource type="Script" path="res://Area2D.gd" id="2_x4hdn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a26nr"]
-size = Vector2(248.5, 982.75)
+size = Vector2(123.797, 982.75)
 
 [node name="Tree" type="StaticBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(18, 7)
+position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_a26nr")
 
 [node name="Tree1" type="Sprite2D" parent="."]
@@ -21,7 +21,7 @@ texture = ExtResource("2_1kh8k")
 script = ExtResource("2_x4hdn")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(36.75, 4)
+position = Vector2(33, -1)
 shape = SubResource("RectangleShape2D_a26nr")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
