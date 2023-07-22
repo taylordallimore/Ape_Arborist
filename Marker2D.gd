@@ -7,7 +7,10 @@ signal spawned(spawn)
 
 
 func spawn():
-	var spawnling = spawnling_scene.instance()
-	spawnling.position = position
-	get_parent().add_child(spawnling)
-	# queue_free()
+	var spawnling = spawnling_scene.instantiate()
+	add_child(spawnling)
+	return spawnling
+
+func _on_timer_timeout():
+	spawn() 
+	
