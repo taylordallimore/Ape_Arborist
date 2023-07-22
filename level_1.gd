@@ -12,7 +12,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):	 
-
+	if total_lumberjacks > 15 and lumberjacks.size() == 0:
+		get_tree().change_scene_to_file("res://level_2.tscn")
 		
 	if  lumberjacks.size() < 14:
 		lumberjacks.append(1)
