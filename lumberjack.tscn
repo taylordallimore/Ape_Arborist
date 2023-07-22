@@ -1,40 +1,12 @@
-[gd_scene load_steps=34 format=3 uid="uid://cn2q8kmjstev0"]
+[gd_scene load_steps=32 format=3 uid="uid://cn2q8kmjstev0"]
 
 [ext_resource type="Texture2D" uid="uid://cv7ln08nnem0o" path="res://Lumberjack sprites/jack walk.png" id="1_7fvyb"]
 [ext_resource type="Script" path="res://lumberjack.gd" id="1_cdbgi"]
 [ext_resource type="Texture2D" uid="uid://b376jqbbjr4c4" path="res://Lumberjack sprites/Jack swinging.png" id="2_c3t2p"]
-[ext_resource type="Texture2D" uid="uid://yv3wvw46glpy" path="res://Lumberjack sprites/dead.png" id="2_ono76"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5lr7n"]
 radius = 36.7136
 height = 101.662
-
-[sub_resource type="Animation" id="Animation_dodob"]
-resource_name = "Dead"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"Dead"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
 
 [sub_resource type="Animation" id="Animation_hhigg"]
 resource_name = "Hit"
@@ -124,7 +96,6 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uh3pj"]
 _data = {
-"Dead": SubResource("Animation_dodob"),
 "Hit": SubResource("Animation_hhigg"),
 "RESET": SubResource("Animation_6c1qc"),
 "Walk": SubResource("Animation_akboq")
@@ -222,14 +193,6 @@ region = Rect2(326, 172, 163, 172)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_ono76")
-}],
-"loop": true,
-"name": &"Dead",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_in3rt")
 }, {
 "duration": 1.0,
@@ -305,8 +268,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Lumberjack" type="CharacterBody2D" groups=["t"]]
+[node name="Lumberjack" type="CharacterBody2D"]
 scale = Vector2(0.789898, 1.04267)
+slide_on_ceiling = false
 script = ExtResource("1_cdbgi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -325,5 +289,6 @@ position = Vector2(0, 0.959078)
 scale = Vector2(0.543988, 0.601535)
 sprite_frames = SubResource("SpriteFrames_q0ub0")
 animation = &"Hit"
+frame = 2
 flip_h = true
 metadata/_edit_lock_ = true
