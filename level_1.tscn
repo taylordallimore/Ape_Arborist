@@ -1,6 +1,7 @@
+[gd_scene load_steps=7 format=3 uid="uid://c3b84woblnagl"]
 [gd_scene load_steps=8 format=3 uid="uid://b7jmi4g0y3h1e"]
 
-[ext_resource type="PackedScene" uid="uid://cjpfmcgy0cy8r" path="res://bg.tscn" id="1_0e2x1"]
+[ext_resource type="PackedScene" uid="uid://b5duv7akkuhok" path="res://bg.tscn" id="1_0e2x1"]
 [ext_resource type="Texture2D" uid="uid://j5vtsox467i4" path="res://assets/tileset.png" id="1_ejclg"]
 [ext_resource type="PackedScene" uid="uid://cm1jobxyic5cf" path="res://tree_1.tscn" id="2_d7diu"]
 [ext_resource type="PackedScene" uid="uid://iiarnn756g7j" path="res://spawner_2d.tscn" id="4_sj4hu"]
