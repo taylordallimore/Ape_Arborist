@@ -14,3 +14,8 @@ config/name="Ape_Arborist"
 run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
+
+[layer_names]
+
+2d_physics/layer_1="Objects"
+2d_physics/layer_2="Players"
