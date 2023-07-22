@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://xw7mc6ir0yhe"]
+
+[ext_resource type="Script" path="res://tchar.gd" id="1_slr06"]
+[ext_resource type="Texture2D" uid="uid://odcwjyxormjd" path="res://Monkey Spritesheet/Money.png" id="1_wskw8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p3pgf"]
+radius = 179.0
+height = 540.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6rkn"]
+atlas = ExtResource("1_wskw8")
+region = Rect2(174, 0, 174, 280)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wyn45"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6rkn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["t"]]
+scale = Vector2(0.604901, 0.604901)
+script = ExtResource("1_slr06")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("CapsuleShape2D_p3pgf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2.00001, 3.99999)
+scale = Vector2(1.75287, 1.75287)
+sprite_frames = SubResource("SpriteFrames_wyn45")
