@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://csmwxtnp7sjj1"]
+
+[ext_resource type="Script" path="res://Lumberjacks/flying_jack.gd" id="1_65pdb"]
+[ext_resource type="Texture2D" uid="uid://rgpegwbyylyb" path="res://Lumberjack sprites/Flying lumberjack.png" id="1_vm12u"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4ot0"]
+radius = 0.120438
+height = 139.162
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xr3n4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vm12u")
+}],
+"loop": true,
+"name": &"Fly",
+"speed": 5.0
+}]
+
+[node name="FlyingJack" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_65pdb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(359.323, -0.172511)
+shape = SubResource("CapsuleShape2D_g4ot0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-9.53674e-07, 1.43051e-06)
+scale = Vector2(0.145833, 0.145833)
+sprite_frames = SubResource("SpriteFrames_xr3n4")
+animation = &"Fly"
+metadata/_edit_lock_ = true
