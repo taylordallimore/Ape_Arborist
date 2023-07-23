@@ -411,7 +411,7 @@ sources/0 = SubResource("TileSetAtlasSource_yayco")
 position = Vector2(1083, 552)
 
 [node name="Tree" parent="." instance=ExtResource("2_d7diu")]
-position = Vector2(32, 158)
+position = Vector2(79, 125)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_ln823")

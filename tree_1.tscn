@@ -1,18 +1,128 @@
-[gd_scene load_steps=4 format=3 uid="uid://cm1jobxyic5cf"]
+[gd_scene load_steps=18 format=3 uid="uid://cm1jobxyic5cf"]
 
 [ext_resource type="Script" path="res://tree_1.gd" id="1_72cio"]
 [ext_resource type="Texture2D" uid="uid://dnfpa1v3idgvs" path="res://Trees/tree1.png" id="2_1kh8k"]
+[ext_resource type="Texture2D" uid="uid://balo8odqkqgft" path="res://Trees/Falling Tree.png" id="3_2v2n6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a26nr"]
 size = Vector2(123.797, 982.75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vqo6"]
+atlas = ExtResource("3_2v2n6")
+region = Rect2(0, 0, 1434, 1185)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1y1g4"]
+atlas = ExtResource("3_2v2n6")
+region = Rect2(1434, 0, 1434, 1185)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvoea"]
+atlas = ExtResource("3_2v2n6")
+region = Rect2(2868, 0, 1434, 1185)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6u3w"]
+atlas = ExtResource("3_2v2n6")
+region = Rect2(0, 1185, 1434, 1185)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c88oi"]
+atlas = ExtResource("3_2v2n6")
+region = Rect2(1434, 1185, 1434, 1185)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xevw5"]
+atlas = ExtResource("3_2v2n6")
+region = Rect2(2868, 1185, 1434, 1185)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwbjj"]
+atlas = ExtResource("3_2v2n6")
+region = Rect2(0, 2370, 1434, 1185)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkjn1"]
+atlas = ExtResource("3_2v2n6")
+region = Rect2(1434, 2370, 1434, 1185)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e17yc"]
+atlas = ExtResource("3_2v2n6")
+region = Rect2(2868, 2370, 1434, 1185)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnmc0"]
+atlas = ExtResource("3_2v2n6")
+region = Rect2(0, 3555, 1434, 1185)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhkhf"]
+atlas = ExtResource("3_2v2n6")
+region = Rect2(1434, 3555, 1434, 1185)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4b53g"]
+atlas = ExtResource("3_2v2n6")
+region = Rect2(2868, 3555, 1434, 1185)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y0drf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1kh8k")
+}],
+"loop": true,
+"name": &"Alive",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1vqo6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1y1g4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yvoea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6u3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c88oi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xevw5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwbjj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vkjn1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e17yc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnmc0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nhkhf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4b53g")
+}],
+"loop": true,
+"name": &"Fall",
+"speed": 5.0
+}]
 
 [node name="Tree" type="StaticBody2D" groups=["tree"]]
 script = ExtResource("1_72cio")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_a26nr")
 
 [node name="Tree1" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-14, 28)
 texture = ExtResource("2_1kh8k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(289, 40)
+sprite_frames = SubResource("SpriteFrames_y0drf")
+animation = &"Alive"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
