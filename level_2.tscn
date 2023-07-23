@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3mrtfmhxh1q2"]
+[gd_scene load_steps=6 format=3 uid="uid://c3mrtfmhxh1q2"]
 
 [ext_resource type="Script" path="res://BG.gd" id="1_pb8dn"]
 [ext_resource type="Texture2D" uid="uid://bc3lfyb5jtg8h" path="res://assets/CloudBackground.jpg" id="2_qlokp"]
 [ext_resource type="Texture2D" uid="uid://chclamcnfbta1" path="res://assets/Level_2_backing.png" id="3_6myr7"]
+[ext_resource type="PackedScene" uid="uid://csmwxtnp7sjj1" path="res://Lumberjacks/flying_jack.tscn" id="4_ral40"]
+[ext_resource type="Script" path="res://Marker2D.gd" id="5_ya33t"]
 
 [node name="level_2" type="Node2D"]
 
@@ -37,3 +39,20 @@ motion_mirroring = Vector2(1160, 0)
 position = Vector2(580, 396.5)
 scale = Vector2(0.568627, 0.436632)
 texture = ExtResource("3_6myr7")
+
+[node name="FlyingJack" parent="." instance=ExtResource("4_ral40")]
+position = Vector2(1863, 336)
+motion_mode = 0
+
+[node name="Spawner2D" type="Marker2D" parent="."]
+position = Vector2(1980, 405)
+gizmo_extents = 50.0
+script = ExtResource("5_ya33t")
+spawnling_scene = ExtResource("4_ral40")
+
+[node name="Timer" type="Timer" parent="Spawner2D"]
+wait_time = 7.0
+autostart = true
+
+[connection signal="spawned" from="Spawner2D" to="Spawner2D" method="_on_spawned" flags=18]
+[connection signal="timeout" from="Spawner2D/Timer" to="Spawner2D" method="_on_timer_timeout" flags=18]
