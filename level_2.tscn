@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://c3mrtfmhxh1q2"]
+[gd_scene load_steps=8 format=3 uid="uid://c3mrtfmhxh1q2"]
 
 [ext_resource type="Script" path="res://BG.gd" id="1_pb8dn"]
 [ext_resource type="Texture2D" uid="uid://bc3lfyb5jtg8h" path="res://assets/CloudBackground.jpg" id="2_qlokp"]
 [ext_resource type="Texture2D" uid="uid://chclamcnfbta1" path="res://assets/Level_2_backing.png" id="3_6myr7"]
+[ext_resource type="PackedScene" uid="uid://csmwxtnp7sjj1" path="res://Lumberjacks/flying_jack.tscn" id="4_7xl1j"]
+[ext_resource type="PackedScene" uid="uid://cm1jobxyic5cf" path="res://tree_1.tscn" id="5_5lhly"]
+[ext_resource type="PackedScene" uid="uid://bnlfvaxws22dk" path="res://turret.tscn" id="6_kqrxf"]
 
 [sub_resource type="GDScript" id="GDScript_dq8nw"]
 script/source = "extends Node2D
@@ -15,6 +18,13 @@ func exit_button():
 
 [node name="level_2" type="Node2D"]
 script = SubResource("GDScript_dq8nw")
+
+[node name="exit to menu" type="Button" parent="."]
+offset_left = 996.0
+offset_top = 14.0
+offset_right = 1132.0
+offset_bottom = 89.0
+text = "Exit to menu"
 
 [node name="BG" type="ParallaxBackground" parent="."]
 script = ExtResource("1_pb8dn")
@@ -34,7 +44,7 @@ scale = Vector2(0.972059, 0.897786)
 texture = ExtResource("2_qlokp")
 
 [node name="CloudBackground2" type="Sprite2D" parent="BG/ParallaxLayer2"]
-position = Vector2(659, 73)
+position = Vector2(659, 97)
 scale = Vector2(0.972059, 0.897786)
 texture = ExtResource("2_qlokp")
 flip_h = true
@@ -48,11 +58,16 @@ position = Vector2(580, 396.5)
 scale = Vector2(0.568627, 0.436632)
 texture = ExtResource("3_6myr7")
 
-[node name="exit to menu" type="Button" parent="."]
-offset_left = 6.0
-offset_top = 4.0
-offset_right = 95.0
-offset_bottom = 64.0
-text = "Exit to menu"
+[node name="FlyingJack" parent="." instance=ExtResource("4_7xl1j")]
+position = Vector2(986, 181)
+scale = Vector2(1.74117, 1.74378)
+
+[node name="Tree" parent="." instance=ExtResource("5_5lhly")]
+position = Vector2(121, 100)
+scale = Vector2(-1.77011, 1.79418)
+metadata/_edit_lock_ = true
+
+[node name="Turret" parent="." instance=ExtResource("6_kqrxf")]
+position = Vector2(256, 280)
 
 [connection signal="pressed" from="exit to menu" to="." method="exit_button"]
