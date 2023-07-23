@@ -30,13 +30,6 @@ offset_bottom = 222.0
 text = "Test
 "
 
-[node name="Crawf" type="Button" parent="."]
-offset_left = 97.0
-offset_top = 412.0
-offset_right = 265.0
-offset_bottom = 548.0
-text = "Crawf"
-
 [node name="Tutorial" type="Button" parent="."]
 offset_left = 330.0
 offset_top = 216.0
@@ -47,5 +40,4 @@ text = "Tutorial"
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Test" to="." method="_on_test_pressed"]
-[connection signal="pressed" from="Crawf" to="." method="_on_crawf_pressed"]
 [connection signal="pressed" from="Tutorial" to="." method="on_tut_pressed"]
