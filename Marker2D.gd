@@ -18,6 +18,12 @@ func _on_timer_timeout():
 	if level1Spawned >= level1MaxSpawn:
 		return
 	spawn() 
+	level1Spawned += 1
+
+
+	
+		
+
 	
 
 
