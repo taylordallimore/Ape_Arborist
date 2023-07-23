@@ -35,6 +35,8 @@ func _physics_process(delta):
 	if not alive:
 		return
 	if attacking:
+		if target.alive == false:
+			return
 		target.damage()
 		return
 	# print(velocity.x) 
