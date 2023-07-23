@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cm1jobxyic5cf"]
+[gd_scene load_steps=22 format=3 uid="uid://cm1jobxyic5cf"]
 
 [ext_resource type="Script" path="res://tree_1.gd" id="1_72cio"]
 [ext_resource type="Texture2D" uid="uid://dnfpa1v3idgvs" path="res://Trees/tree1.png" id="2_1kh8k"]
@@ -102,10 +102,62 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4b53g")
 }],
-"loop": true,
+"loop": false,
 "name": &"Fall",
 "speed": 5.0
 }]
+
+[sub_resource type="Animation" id="Animation_p40mf"]
+resource_name = "Fall"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 11]
+}
+
+[sub_resource type="Animation" id="Animation_so77s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_14jqn"]
+resource_name = "Alive"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ibt6c"]
+_data = {
+"Alive": SubResource("Animation_14jqn"),
+"Fall": SubResource("Animation_p40mf"),
+"RESET": SubResource("Animation_so77s")
+}
 
 [node name="Tree" type="StaticBody2D" groups=["tree"]]
 script = ExtResource("1_72cio")
@@ -123,6 +175,10 @@ texture = ExtResource("2_1kh8k")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(289, 40)
 sprite_frames = SubResource("SpriteFrames_y0drf")
-animation = &"Alive"
+animation = &"Fall"
+frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_ibt6c")
+}

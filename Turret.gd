@@ -7,12 +7,18 @@ extends Node2D
 var can_fire = true
 var player
 var poop = false
+var home = null
+
+
 
 func _ready():
 	player = get_parent().find_child("player")
 	
 
 func _physics_process(_delta):
+	if home != null:
+		if not home.alive:
+			fall()
 	
 	_aim() #aim at player
 	
@@ -30,20 +36,12 @@ func _input(event):
 				_shoot()
 
 			
-		
-# func _input(event):
-# 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-# 	# Get the current mouse position relative to the global coordinate system
-# 		var mouse_position = get_global_mouse_position()
-# 		print("Mouse Position: ", mouse_position)
-			
 func _aim():
 	#ray_cast.target_position = to_local(player.position)
 	ray_cast.target_position = get_local_mouse_position()
 
 func _on_timer_timeout():
 	can_fire = true
-
 
 
 func _shoot():
@@ -53,4 +51,11 @@ func _shoot():
 	get_tree().current_scene.add_child(bullet)
 	can_fire = false
 	timer.start()
-	
+
+func set_home(h:Node2D):
+	if home == null:
+		home = h
+
+func fall(): 
+	queue_free()
+
