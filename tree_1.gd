@@ -1,5 +1,5 @@
 extends StaticBody2D
-var health = 1500
+var health = 5000
 var alive = true
 var deadPlayed = false
 @onready var animate = get_node("AnimatedSprite2D")
