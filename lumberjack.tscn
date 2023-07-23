@@ -1,13 +1,14 @@
-[gd_scene load_steps=32 format=3 uid="uid://cn2q8kmjstev0"]
+[gd_scene load_steps=34 format=3 uid="uid://cn2q8kmjstev0"]
 
 [ext_resource type="Texture2D" uid="uid://cv7ln08nnem0o" path="res://Lumberjack sprites/jack walk.png" id="1_7fvyb"]
 [ext_resource type="Script" path="res://lumberjack.gd" id="1_cdbgi"]
 [ext_resource type="Texture2D" uid="uid://b376jqbbjr4c4" path="res://Lumberjack sprites/Jack swinging.png" id="2_c3t2p"]
 [ext_resource type="Texture2D" uid="uid://yv3wvw46glpy" path="res://Lumberjack sprites/dead.png" id="2_ono76"]
+[ext_resource type="Script" path="res://Lumber body.gd" id="5_evwcy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5lr7n"]
-radius = 36.7136
-height = 101.662
+radius = 29.1177
+height = 70.9716
 
 [sub_resource type="Animation" id="Animation_dodob"]
 resource_name = "Dead"
