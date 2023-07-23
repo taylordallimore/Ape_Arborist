@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwpqc63viigbs"]
+
+[sub_resource type="GDScript" id="GDScript_kvcos"]
+script/source = "extends Node2D
+
+
+func exit_button():
+	get_tree().change_scene_to_file(\"res://main.tscn\")
+
+
+func restart_button():
+	get_tree().change_scene_to_file(\"res://level_1.tscn\")
+"
+
+[node name="GAME_OVER" type="Node2D"]
+script = SubResource("GDScript_kvcos")
+
+[node name="restart" type="Button" parent="."]
+offset_left = 472.0
+offset_top = 310.0
+offset_right = 692.0
+offset_bottom = 415.0
+text = "RESTART"
+
+[node name="back to menu2" type="Button" parent="."]
+offset_left = 472.0
+offset_top = 424.0
+offset_right = 692.0
+offset_bottom = 529.0
+text = "EXIT TO MENU"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 451.0
+offset_top = 198.0
+offset_right = 750.0
+offset_bottom = 280.0
+text = "                    GAME OVER. 
+YOU FAILED TO PROTECT THE TREE."
+
+[connection signal="pressed" from="restart" to="." method="restart_button"]
+[connection signal="pressed" from="back to menu2" to="." method="exit_button"]
