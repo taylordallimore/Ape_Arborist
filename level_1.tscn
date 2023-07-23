@@ -1,10 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://b7jmi4g0y3h1e"]
+[gd_scene load_steps=9 format=3 uid="uid://d1xqsq4ku2bw7"]
 
-[ext_resource type="PackedScene" uid="uid://b5duv7akkuhok" path="res://bg.tscn" id="1_0e2x1"]
+[ext_resource type="PackedScene" uid="uid://cjpfmcgy0cy8r" path="res://bg.tscn" id="1_0e2x1"]
 [ext_resource type="Texture2D" uid="uid://j5vtsox467i4" path="res://assets/tileset.png" id="1_ejclg"]
 [ext_resource type="PackedScene" uid="uid://cm1jobxyic5cf" path="res://tree_1.tscn" id="2_d7diu"]
 [ext_resource type="PackedScene" uid="uid://iiarnn756g7j" path="res://spawner_2d.tscn" id="4_sj4hu"]
 [ext_resource type="PackedScene" uid="uid://bnlfvaxws22dk" path="res://turret.tscn" id="5_do441"]
+
+[sub_resource type="GDScript" id="GDScript_oo86c"]
+script/source = "extends Node2D
+
+
+
+func exit_button():
+	get_tree().change_scene_to_file(\"res://main.tscn\")
+	
+"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yayco"]
 texture = ExtResource("1_ejclg")
@@ -404,6 +414,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_yayco")
 
 [node name="level_1" type="Node2D"]
+script = SubResource("GDScript_oo86c")
 
 [node name="BG" parent="." instance=ExtResource("1_0e2x1")]
 
@@ -420,3 +431,12 @@ layer_0/tile_data = PackedInt32Array(2621440, 65536, 1, 2686976, 65536, 3, 26214
 
 [node name="Turret" parent="." instance=ExtResource("5_do441")]
 position = Vector2(198, 126)
+
+[node name="exit to main" type="Button" parent="."]
+offset_left = 1041.0
+offset_top = 11.0
+offset_right = 1138.0
+offset_bottom = 72.0
+text = "Exit to menu"
+
+[connection signal="pressed" from="exit to main" to="." method="exit_button"]
