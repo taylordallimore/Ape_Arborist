@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://csmwxtnp7sjj1"]
+[gd_scene load_steps=7 format=3 uid="uid://csmwxtnp7sjj1"]
 
 [ext_resource type="Script" path="res://Lumberjacks/flying_jack.gd" id="1_65pdb"]
 [ext_resource type="Texture2D" uid="uid://rgpegwbyylyb" path="res://Lumberjack sprites/Flying lumberjack.png" id="1_vm12u"]
+[ext_resource type="Script" path="res://Lumber body.gd" id="3_jivcb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4ot0"]
 radius = 0.120438
@@ -18,6 +19,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fcl40"]
+radius = 35.5542
+height = 172.0
+
 [node name="FlyingJack" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_65pdb")
@@ -32,3 +37,13 @@ scale = Vector2(0.145833, 0.145833)
 sprite_frames = SubResource("SpriteFrames_xr3n4")
 animation = &"Fly"
 metadata/_edit_lock_ = true
+
+[node name="Lumber body" type="Area2D" parent="."]
+script = ExtResource("3_jivcb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lumber body"]
+position = Vector2(1, 1)
+scale = Vector2(1.1813, 0.141834)
+shape = SubResource("CapsuleShape2D_fcl40")
+
+[connection signal="body_entered" from="Lumber body" to="Lumber body" method="_on_body_entered"]

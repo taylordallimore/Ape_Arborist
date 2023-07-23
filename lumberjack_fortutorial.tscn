@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://decmds0qfjn34"]
+[gd_scene load_steps=34 format=3 uid="uid://dhtd2bwu84hyp"]
 
 [ext_resource type="Script" path="res://lumberjack_fortutorial.gd" id="1_1n76v"]
 [ext_resource type="Texture2D" uid="uid://yv3wvw46glpy" path="res://Lumberjack sprites/dead.png" id="2_3o4fc"]
