@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://bnlfvaxws22dk"]
+[gd_scene load_steps=19 format=3 uid="uid://bnlfvaxws22dk"]
 
 [ext_resource type="Script" path="res://Turret.gd" id="1_yge2u"]
 [ext_resource type="PackedScene" uid="uid://c2trakwsfbqbb" path="res://bullets.tscn" id="2_kqm4q"]
 [ext_resource type="Texture2D" uid="uid://odcwjyxormjd" path="res://Monkey Spritesheet/Money.png" id="3_dyy7i"]
+[ext_resource type="Script" path="res://turretConnect.gd" id="4_881x8"]
 
 [sub_resource type="Animation" id="Animation_ymlh8"]
 length = 0.001
@@ -136,7 +137,11 @@ func _process(_delta):
 	pass
 "
 
-[node name="Turret" type="Node2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0xnlg"]
+radius = 45.0
+height = 136.0
+
+[node name="Turret" type="Node2D" groups=["monkey"]]
 position = Vector2(345, 169)
 script = ExtResource("1_yge2u")
 ammo = ExtResource("2_kqm4q")
@@ -166,4 +171,12 @@ animation = &"Throw"
 frame = 1
 script = SubResource("GDScript_bng1d")
 
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("4_881x8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-68, -53)
+shape = SubResource("CapsuleShape2D_0xnlg")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
