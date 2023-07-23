@@ -30,13 +30,6 @@ offset_bottom = 494.0
 text = "Test
 "
 
-[node name="Crawf" type="Button" parent="."]
-offset_left = 290.0
-offset_top = 376.0
-offset_right = 477.0
-offset_bottom = 512.0
-text = "Crawf"
-
 [node name="Tutorial" type="Button" parent="."]
 offset_left = 520.0
 offset_top = 245.0
