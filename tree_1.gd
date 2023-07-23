@@ -1,10 +1,11 @@
 extends StaticBody2D
 var health = 10000
 var alive = true
+@onready var animate = get_node("AnimatedSprite2D")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	animate.play("Alive")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,5 +19,6 @@ func damage():
 	if health <= 0:
 		print("dead")
 		alive = false
+		animate.play("Fall")
 		
 

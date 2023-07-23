@@ -46,12 +46,3 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-
-
-# func _on_lumber_body_body_entered(body:Node2D):
-# 	if body.is_in_group("tree"):
-# 		print("bolo")
-		
-# 		if alive:
-# 			start_attacking()
-# 			body.damage()
