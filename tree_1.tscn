@@ -102,7 +102,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4b53g")
 }],
-"loop": true,
+"loop": false,
 "name": &"Fall",
 "speed": 5.0
 }]
@@ -123,6 +123,11 @@ texture = ExtResource("2_1kh8k")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(289, 40)
 sprite_frames = SubResource("SpriteFrames_y0drf")
-animation = &"Alive"
+animation = &"Fall"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
+
+[node name="falltime" type="Timer" parent="."]
+wait_time = 4.0
+
+[connection signal="timeout" from="falltime" to="." method="_on_falltime_timeout"]

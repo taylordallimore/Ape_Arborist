@@ -12,22 +12,26 @@ var health = 100
 var alive = true
 var attacking = false
 var target = null
-
+@onready var level = get_parent()
 @onready var anim = get_node("AnimationPlayer")
 
 func _ready():
-	velocity.x = -SPEED
+	velocity.x = -randf_range(100,150)  # The speed at which the sprite moves from left to right.
+
 
 func kill():
+	if alive == false:
+		return
 	alive = false
 	anim.play("Dead")
+	level.increase_dead()
 
 func start_attacking(tree:Node2D):
 	target = tree
 	attacking = true
 	anim.play("Hit")
 	velocity.x = 0
-	target.damage()
+	target.damage(30)
 	
 
 func _physics_process(delta):
@@ -37,7 +41,7 @@ func _physics_process(delta):
 	if attacking:
 		if target.alive == false:
 			return
-		target.damage()
+		target.damage(30)
 		return
 	# print(velocity.x) 
 	velocity.x = -SPEED

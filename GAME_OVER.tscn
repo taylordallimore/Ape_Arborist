@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cwpqc63viigbs"]
+[gd_scene load_steps=3 format=3 uid="uid://cwpqc63viigbs"]
+
+[ext_resource type="Texture2D" uid="uid://nrroacmo6l8l" path="res://death.jpg" id="1_bwitt"]
 
 [sub_resource type="GDScript" id="GDScript_kvcos"]
 script/source = "extends Node2D
@@ -9,7 +11,7 @@ func exit_button():
 
 
 func restart_button():
-	get_tree().change_scene_to_file(\"res://level_1.tscn\")
+	get_tree().change_scene_to_file(\"res://notlevel_1.tscn\")
 "
 
 [node name="GAME_OVER" type="Node2D"]
@@ -43,6 +45,12 @@ offset_right = 750.0
 offset_bottom = 280.0
 text = "                    GAME OVER. 
 YOU FAILED TO PROTECT THE TREE."
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Death" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(739, 475)
+texture = ExtResource("1_bwitt")
 
 [connection signal="pressed" from="restart" to="." method="restart_button"]
 [connection signal="pressed" from="back to menu2" to="." method="exit_button"]
