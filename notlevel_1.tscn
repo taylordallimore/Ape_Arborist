@@ -1,4 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://c4xnft1m5y043"]
+[gd_scene load_steps=10 format=3 uid="uid://c4xnft1m5y043"]
+
+[ext_resource type="Script" path="res://notlevel_1.gd" id="1_c3tjt"]
 
 [ext_resource type="PackedScene" uid="uid://b5duv7akkuhok" path="res://bg.tscn" id="1_enkyg"]
 [ext_resource type="PackedScene" uid="uid://iiarnn756g7j" path="res://spawner_2d.tscn" id="2_o4rl4"]
@@ -406,6 +408,9 @@ sources/0 = SubResource("TileSetAtlasSource_yayco")
 
 [node name="notlevel1" type="Node2D"]
 
+script = ExtResource("1_c3tjt")
+
+
 [node name="Spawner2D" parent="." instance=ExtResource("2_o4rl4")]
 position = Vector2(1217, 494)
 
@@ -424,3 +429,14 @@ layer_0/tile_data = PackedInt32Array(2621440, 65536, 1, 2686976, 65536, 3, 26214
 
 [node name="Turret" parent="." instance=ExtResource("5_xlcl6")]
 position = Vector2(147, 235)
+
+
+[node name="exit to main" type="Button" parent="."]
+offset_left = 1014.0
+offset_top = 13.0
+offset_right = 1135.0
+offset_bottom = 61.0
+text = "Exit to menu"
+
+[connection signal="pressed" from="exit to main" to="." method="exit_to_main"]
+
