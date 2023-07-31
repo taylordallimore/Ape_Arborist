@@ -23,7 +23,9 @@ animations = [{
 radius = 35.5542
 height = 172.0
 
+
 [node name="FlyingJack" type="CharacterBody2D" groups=["t"]]
+
 motion_mode = 1
 script = ExtResource("1_65pdb")
 
